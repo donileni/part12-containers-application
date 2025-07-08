@@ -9,6 +9,7 @@ const TodoView = () => {
 
   const refreshTodos = async () => {
     const { data } = await axios.get('/todos')
+    console.log("data: ", data)
     setTodos(data)
   }
 
@@ -36,7 +37,7 @@ const TodoView = () => {
 
   return (
     <>
-      <h1>Todos</h1>
+      <h1>Todo</h1>
       <Form createTodo={createTodo} />
       <List todos={todos} deleteTodo={deleteTodo} completeTodo={completeTodo} />
     </>
